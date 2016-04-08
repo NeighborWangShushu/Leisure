@@ -1,0 +1,4 @@
+source "https://gitcafe.com/akuandev/Specs.git"
+pod 'SDWebImage', '~> 3.7.5'
+pod 'UITableView+FDTemplateLayoutCell_Bell', '~> 1.4.1'
+pod 'MJRefresh', '~> 3.1.0'

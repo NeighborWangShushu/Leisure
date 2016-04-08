@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="P7P-wV-FT0" customClass="PlayRadioView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view tag="1000" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Atz-ma-AFQ" customClass="PlayRadioView">
+                    <rect key="frame" x="180" y="5" width="240" height="20"/>
+                    <subviews>
+                        <view tag="2000" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tvz-8X-FUF">
+                            <rect key="frame" x="70" y="7" width="20" height="5"/>
+                            <color key="backgroundColor" red="0.5783033756" green="0.58374932390000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view tag="2001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mYs-Ie-7ZC">
+                            <rect key="frame" x="110" y="7" width="20" height="5"/>
+                            <color key="backgroundColor" red="0.5783033756" green="0.58374932390000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="5" id="eMB-RK-pPg"/>
+                                <constraint firstAttribute="width" constant="20" id="t3f-ZE-KEz"/>
+                            </constraints>
+                        </view>
+                        <view tag="2002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SM5-92-kdc">
+                            <rect key="frame" x="150" y="7" width="20" height="5"/>
+                            <color key="backgroundColor" red="0.5783033756" green="0.58374932390000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="tvz-8X-FUF" firstAttribute="centerY" secondItem="mYs-Ie-7ZC" secondAttribute="centerY" id="BRM-Kb-gCl"/>
+                        <constraint firstItem="mYs-Ie-7ZC" firstAttribute="leading" secondItem="tvz-8X-FUF" secondAttribute="trailing" constant="41" id="BoX-AQ-oRR"/>
+                        <constraint firstItem="mYs-Ie-7ZC" firstAttribute="centerX" secondItem="Atz-ma-AFQ" secondAttribute="centerX" id="F1t-oI-OPF"/>
+                        <constraint firstAttribute="height" constant="20" id="GWR-Vg-5IN"/>
+                        <constraint firstAttribute="width" constant="240" id="II7-t9-Pdy"/>
+                        <constraint firstItem="SM5-92-kdc" firstAttribute="width" secondItem="mYs-Ie-7ZC" secondAttribute="width" id="Uoq-sN-m02"/>
+                        <constraint firstItem="SM5-92-kdc" firstAttribute="height" secondItem="mYs-Ie-7ZC" secondAttribute="height" id="Va2-aX-X2Y"/>
+                        <constraint firstItem="mYs-Ie-7ZC" firstAttribute="leading" secondItem="tvz-8X-FUF" secondAttribute="trailing" constant="20" id="ZfP-RN-6mm"/>
+                        <constraint firstItem="SM5-92-kdc" firstAttribute="leading" secondItem="mYs-Ie-7ZC" secondAttribute="trailing" constant="20" id="bPS-aL-K2x"/>
+                        <constraint firstItem="SM5-92-kdc" firstAttribute="centerY" secondItem="mYs-Ie-7ZC" secondAttribute="centerY" id="fzW-dL-ewQ"/>
+                        <constraint firstItem="mYs-Ie-7ZC" firstAttribute="centerY" secondItem="Atz-ma-AFQ" secondAttribute="centerY" id="qXU-39-acl"/>
+                        <constraint firstItem="tvz-8X-FUF" firstAttribute="height" secondItem="mYs-Ie-7ZC" secondAttribute="height" id="xO1-Pg-zOE"/>
+                        <constraint firstItem="tvz-8X-FUF" firstAttribute="width" secondItem="mYs-Ie-7ZC" secondAttribute="width" id="ypf-7V-8RV"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="BoX-AQ-oRR"/>
+                        </mask>
+                    </variation>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GwW-Uc-HVl">
+                    <rect key="frame" x="50" y="35" width="500" height="1"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="7xW-Ad-5mT"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" tag="3002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNn-1D-TP6">
+                    <rect key="frame" x="370" y="46" width="40" height="40"/>
+                    <state key="normal" backgroundImage="player_next.png"/>
+                    <state key="highlighted" backgroundImage="player_next_hl.png"/>
+                    <connections>
+                        <action selector="nextRadioButton:" destination="P7P-wV-FT0" eventType="touchUpInside" id="Iui-hG-6zu"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AnO-ny-hQF">
+                    <rect key="frame" x="280" y="46" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="AnO-ny-hQF" secondAttribute="height" multiplier="1:1" id="36Z-FP-8ya"/>
+                        <constraint firstAttribute="width" constant="40" id="RSs-zX-Vn8"/>
+                        <constraint firstAttribute="height" constant="40" id="Rpa-m8-BN0"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="player_pause.png"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="36Z-FP-8ya"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="playRadioButton:" destination="P7P-wV-FT0" eventType="touchUpInside" id="iOl-MO-WAc"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPr-oK-Xnv">
+                    <rect key="frame" x="190" y="46" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="zPr-oK-Xnv" secondAttribute="height" multiplier="1:1" id="u5J-hz-Eec"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="player_prev.png"/>
+                    <state key="highlighted" backgroundImage="player_prev_hl.png"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="u5J-hz-Eec"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="lastRadioButton:" destination="P7P-wV-FT0" eventType="touchUpInside" id="HKd-cS-rxk"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.40000000000000002" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="AnO-ny-hQF" firstAttribute="centerX" secondItem="P7P-wV-FT0" secondAttribute="centerX" id="6GG-gl-xlE"/>
+                <constraint firstItem="zPr-oK-Xnv" firstAttribute="height" secondItem="AnO-ny-hQF" secondAttribute="height" id="HsT-s7-uty"/>
+                <constraint firstItem="SNn-1D-TP6" firstAttribute="centerY" secondItem="AnO-ny-hQF" secondAttribute="centerY" id="NTi-Bd-Tdd"/>
+                <constraint firstItem="Atz-ma-AFQ" firstAttribute="top" secondItem="P7P-wV-FT0" secondAttribute="top" constant="5" id="Xec-xm-xlH"/>
+                <constraint firstItem="Atz-ma-AFQ" firstAttribute="centerX" secondItem="P7P-wV-FT0" secondAttribute="centerX" id="cJu-pm-aOB"/>
+                <constraint firstItem="SNn-1D-TP6" firstAttribute="width" secondItem="AnO-ny-hQF" secondAttribute="width" id="chM-qv-mcw"/>
+                <constraint firstItem="GwW-Uc-HVl" firstAttribute="top" secondItem="Atz-ma-AFQ" secondAttribute="bottom" constant="10" id="hbp-fx-MKc"/>
+                <constraint firstItem="zPr-oK-Xnv" firstAttribute="width" secondItem="AnO-ny-hQF" secondAttribute="width" id="itk-T0-cLs"/>
+                <constraint firstItem="AnO-ny-hQF" firstAttribute="top" secondItem="GwW-Uc-HVl" secondAttribute="bottom" constant="10" id="jbw-xo-5ea"/>
+                <constraint firstItem="SNn-1D-TP6" firstAttribute="height" secondItem="AnO-ny-hQF" secondAttribute="height" id="nNk-dp-3Uy"/>
+                <constraint firstAttribute="trailing" secondItem="GwW-Uc-HVl" secondAttribute="trailing" constant="50" id="ofM-di-HBH"/>
+                <constraint firstItem="SNn-1D-TP6" firstAttribute="leading" secondItem="AnO-ny-hQF" secondAttribute="trailing" constant="50" id="pb5-uZ-lgw"/>
+                <constraint firstItem="zPr-oK-Xnv" firstAttribute="centerY" secondItem="AnO-ny-hQF" secondAttribute="centerY" id="tiV-rz-G9j"/>
+                <constraint firstItem="GwW-Uc-HVl" firstAttribute="leading" secondItem="P7P-wV-FT0" secondAttribute="leading" constant="50" id="vTo-b5-b62"/>
+                <constraint firstItem="AnO-ny-hQF" firstAttribute="leading" secondItem="zPr-oK-Xnv" secondAttribute="trailing" constant="50" id="vv7-Q8-AOf"/>
+            </constraints>
+            <point key="canvasLocation" x="14" y="300"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="player_next.png" width="40" height="40"/>
+        <image name="player_next_hl.png" width="40" height="40"/>
+        <image name="player_pause.png" width="50" height="50"/>
+        <image name="player_prev.png" width="40" height="40"/>
+        <image name="player_prev_hl.png" width="40" height="40"/>
+    </resources>
+</document>
