@@ -7,12 +7,67 @@
 //
 
 #import "LoginViewController.h"
+#import "UserInfoManager.h"
 
 @interface LoginViewController ()
+
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
 @end
 
 @implementation LoginViewController
+
+- (IBAction)back:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+    
+}
+
+- (IBAction)LoginButton:(id)sender {
+    [NetWorkRequestManager requestWithType:POST urlString:LOGIN_URL parDic:@{@"email" : _emailTextField.text, @"passwd" : _passwordTextField.text} finish:^(NSData *data) {
+        
+        NSDictionary *dataDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+        
+        NSLog(@"%@", dataDic);
+        
+        NSNumber *result = dataDic[@"result"];
+        
+        if ([result intValue] == 0) {
+            NSString *message = dataDic[@"data"][@"msg"];
+            NSLog(@"msg = %@", message);
+//            [self LoginFailed:dataDic[@"data"][@"msg"]];
+            
+        } else {
+            // 保存auth
+            [UserInfoManager saveUserAuth:dataDic[@"data"][@"auth"]];
+            // 保存name
+            [UserInfoManager saveUserName:dataDic[@"data"][@"uname"]];
+            // 保存id
+            [UserInfoManager saveUserID:dataDic[@"data"][@"uid"]];
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if ([result intValue] == 0) {
+                [self LoginFailed:dataDic[@"data"][@"msg"]];
+            }
+        });
+        
+        
+    } error:^(NSError *error) {
+        NSLog(@"error is %@", error);
+    }];
+}
+
+- (void)LoginFailed:(NSString *)message {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"登录失败" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:action];
+    [self presentViewController:alert animated:YES completion:nil];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -7,6 +7,10 @@
 //
 
 #import "ReadInfoViewController.h"
+#import "CommentViewController.h"
+#import "LoginViewController.h"
+
+#import "UserInfoManager.h"
 #import "ReadInfoModel.h"
 #import "NSString+Html.h"
 
@@ -86,6 +90,34 @@
     
 }
 
+- (void)commentItem {
+    if (![[UserInfoManager getUserAuth] isEqualToString:@""]) {
+        CommentViewController *comment = [[CommentViewController alloc] init];
+        comment.contentid = self.contentid;
+        [self.navigationController pushViewController:comment animated:YES];
+    } else {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请先登录" message:@"您尚未登录" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *login = [UIAlertAction actionWithTitle:@"登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginAndRegister" bundle:nil];
+            LoginViewController *login = [storyboard instantiateInitialViewController];
+            [self presentViewController:login animated:YES completion:nil];
+        }];
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
+        [alert addAction:login];
+        [alert addAction:cancel];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+}
+
+
+- (UIBarButtonItem *)createBarButtonItemWithImageName:(NSString *)imagename action:(SEL)action{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    [button setImage:[UIImage imageNamed:imagename] forState:UIControlStateNormal];
+    button.frame = CGRectMake(0, 0, 25, 25);
+    [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:button];
+    return item;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -95,6 +127,10 @@
     [self createWebView];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    self.navigationItem.rightBarButtonItems = @[[self createBarButtonItemWithImageName:@"fenxiang" action:nil],
+                                                [self createBarButtonItemWithImageName:@"cpinglun" action:@selector(commentItem)],
+                                                [self createBarButtonItemWithImageName:@"shoucang" action:nil]];
     
     // Do any additional setup after loading the view from its nib.
 }

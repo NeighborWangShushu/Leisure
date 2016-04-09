@@ -47,6 +47,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BlH-uA-xnh">
                                 <rect key="frame" x="70" y="35" width="73" height="30"/>
                                 <state key="normal" title="登录 | 注册"/>
+                                <connections>
+                                    <action selector="LoginAndRegister:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DH7-Kg-JrC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wcf-LG-hjD">
                                 <rect key="frame" x="0.0" y="90" width="200" height="30"/>
@@ -62,7 +65,7 @@
                                 <state key="normal" title="收藏"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.40000000000000002" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="BlH-uA-xnh" firstAttribute="leading" secondItem="Jqy-Wi-bdJ" secondAttribute="trailing" constant="15" id="9sZ-xo-JWI"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3lW-Nh-p1M" secondAttribute="bottom" id="F0F-Jl-lxw"/>
@@ -90,10 +93,14 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="iconImage" destination="Jqy-Wi-bdJ" id="ql4-IV-xOK"/>
+                        <outlet property="loginButton" destination="BlH-uA-xnh" id="GlF-7e-3hb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="217" y="491"/>
+            <point key="canvasLocation" x="113" y="464"/>
         </scene>
     </scenes>
     <resources>

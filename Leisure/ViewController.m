@@ -12,6 +12,9 @@
 #import "ProductViewController.h"
 #import "RadioViewController.h"
 #import "TopicViewController.h"
+#import "LoginViewController.h"
+
+#import "UserInfoManager.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -23,9 +26,25 @@
 // 导航视图控制器
 @property (nonatomic, strong) UINavigationController *naVC;
 
+@property (weak, nonatomic) IBOutlet UIImageView *iconImage;
+
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+
 @end
 
 @implementation ViewController
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (![[UserInfoManager getUserAuth] isEqualToString:@""]) {
+        [_loginButton setTitle:[NSString stringWithFormat:@"%@", [UserInfoManager getUserName]] forState:UIControlStateNormal];
+        [_iconImage setImage:[UIImage imageNamed:[UserInfoManager getUserIcon]]];
+    } else {
+        [_loginButton setTitle:@"登录 | 注册" forState:UIControlStateNormal];
+        [_iconImage setImage:[UIImage imageNamed:@"icon"]];
+    }
+    
+}
 
 // 创建新视图
 - (void)createViewController:(NSInteger)index {
@@ -107,6 +126,38 @@
     }
     
 }
+
+#pragma mark -----登录注册-----
+
+- (IBAction)LoginAndRegister:(id)sender {
+    
+    if (![[UserInfoManager getUserAuth] isEqualToString:@""]) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"退出登录" message:@"确认退出登录?" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [UserInfoManager cancelUserAuth];
+            [UserInfoManager cancelUserID];
+            [_loginButton setTitle:@"登录 | 注册" forState:UIControlStateNormal];
+            [_iconImage setImage:[UIImage imageNamed:@"icon"]];
+        }];
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            NSLog(@"取消了退出登录操作");
+        }];
+        [alert addAction:confirm];
+        [alert addAction:cancel];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginAndRegister" bundle:nil];
+    LoginViewController *loginVC = [storyboard instantiateInitialViewController];
+    [self presentViewController:loginVC animated:YES completion:^{
+        
+    }];
+    
+}
+
+
+
+#pragma mark -----UITableView代理方法-----
 
 // 有多少个tableViewCell
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
