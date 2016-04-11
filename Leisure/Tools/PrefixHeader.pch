@@ -20,5 +20,6 @@
 #import "URLHeaderDefine.h"
 #import "ConstantsDefine.h"
 #import "NetWorkRequestManager.h"
+#import "UserInfoManager.h"
 
 #endif /* PrefixHeader_pch */

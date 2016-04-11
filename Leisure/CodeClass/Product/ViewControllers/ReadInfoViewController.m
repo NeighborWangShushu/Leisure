@@ -109,9 +109,9 @@
     }
 }
 
-
+// 创建UIBarButtonItems方法
 - (UIBarButtonItem *)createBarButtonItemWithImageName:(NSString *)imagename action:(SEL)action{
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setImage:[UIImage imageNamed:imagename] forState:UIControlStateNormal];
     button.frame = CGRectMake(0, 0, 25, 25);
     [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];

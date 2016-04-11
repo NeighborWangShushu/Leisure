@@ -15,9 +15,9 @@
 #define READCONTENT_URL        @"http://api2.pianke.me/article/info"  // 文章详情
 
 //  评论
-#define GETCOMMENT_url         @"http://api2.pianke.me/comment/get" // 获取评论
-#define ADDCOMMENT_url         @"http://api2.pianke.me/comment/add" // 发表评论
-#define DELCOMMENT_url         @"http://api2.pianke.me/comment/del" // 删除评论
+#define GETCOMMENT_URL         @"http://api2.pianke.me/comment/get" // 获取评论
+#define ADDCOMMENT_URL         @"http://api2.pianke.me/comment/add" // 发表评论
+#define DELCOMMENT_URL         @"http://api2.pianke.me/comment/del" // 删除评论
 
 //  电台模块
 #define RADIOLIST_URL          @"http://api2.pianke.me/ting/radio"  // 电台列表

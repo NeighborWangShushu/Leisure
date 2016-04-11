@@ -181,9 +181,17 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+// 是当应用程序收到内存警告是会被触发,而且是工程中所有的控制器对象(ViewController类被创建过对象,并且没有被释放)都会收到
+// 当收到内存警告是,要释放可再生的内存数据,通过方法可将资源重新加载回来
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
+    // 在内存警告方法中,释放已经加载的并且不在当前window上显示的根视图
+    // 因为控制器的根视图是一个lazyloading
+    if ([self isViewLoaded] && ![self.view window]) {
+        self.view = nil;
+    }
 }
 
 /*
