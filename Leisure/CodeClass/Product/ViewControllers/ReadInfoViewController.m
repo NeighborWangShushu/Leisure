@@ -162,9 +162,27 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    self.navigationItem.rightBarButtonItems = @[[self createBarButtonItemWithImageName:@"fenxiang" action:nil],
-                                                [self createBarButtonItemWithImageName:@"cpinglun" action:@selector(commentItem)],
-                                                [self createBarButtonItemWithImageName:@"shoucang" action:nil]];
+    
+    UIBarButtonItem *comment = [self createBarButtonItemWithImageName:@"cpinglun" action:@selector(commentItem)];
+    
+    UIBarButtonItem *share = [self createBarButtonItemWithImageName:@"fenxiang" action:nil];
+    
+    UIButton *collectButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [collectButton setImage:[UIImage imageNamed:@"cshoucang"] forState:UIControlStateNormal];
+    collectButton.frame = CGRectMake(0, 0, 25, 25);
+    [collectButton addTarget:self action:@selector(collectItem:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *collect = [[UIBarButtonItem alloc] initWithCustomView:collectButton];
+    
+    self.navigationItem.rightBarButtonItems = @[share, comment, collect];
+    
+    ReadDetailDB *db = [[ReadDetailDB alloc] init];
+    NSArray *array = [db findWithUserID:[UserInfoManager getUserID]];
+    for (ReadDetailListModel *model in array) {
+        if ([model.title isEqualToString:_detailModel.title]) {
+            [collectButton setBackgroundImage:[UIImage imageNamed:@"shoucang"] forState:UIControlStateNormal];
+            break;
+        }
+    }
     
     // Do any additional setup after loading the view from its nib.
 }

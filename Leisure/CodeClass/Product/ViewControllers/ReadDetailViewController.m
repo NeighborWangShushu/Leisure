@@ -219,7 +219,6 @@
     
     _requestSort = 0; // 默认请求最新列表数据
     
-    
     [self requestDataWithSort:@"addtime"];
 //    [self requestDataWithSort:@"hot"];
     
@@ -228,8 +227,6 @@
     UIBarButtonItem *addTimeItem = [[UIBarButtonItem alloc] initWithTitle:@"New" style:UIBarButtonItemStylePlain target:self action:@selector(addTime)];
     UIBarButtonItem *hotItem = [[UIBarButtonItem alloc] initWithTitle:@"Hot" style:UIBarButtonItemStylePlain target:self action:@selector(hot)];
     self.navigationItem.rightBarButtonItems = @[hotItem, addTimeItem];
-    
-    
     
     // Do any additional setup after loading the view from its nib.
 }

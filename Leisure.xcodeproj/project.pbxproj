@@ -88,6 +88,8 @@
 		6277721B1CB7E20E0002CAF9 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6277721A1CB7E20E0002CAF9 /* icon.png */; };
 		6277721F1CB7E7220002CAF9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6277721E1CB7E7220002CAF9 /* LoginViewController.m */; };
 		627772221CB7E7390002CAF9 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 627772211CB7E7390002CAF9 /* RegisterViewController.m */; };
+		628042C81CBE34B300E14896 /* RadioDetailListDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 628042C71CBE34B300E14896 /* RadioDetailListDB.m */; };
+		628042CA1CBE8BAC00E14896 /* fanhui.png in Resources */ = {isa = PBXBuildFile; fileRef = 628042C91CBE8BAC00E14896 /* fanhui.png */; };
 		629FD9451CAE70F600D9FC6E /* TopicListModelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 629FD9441CAE70F600D9FC6E /* TopicListModelCell.m */; };
 		629FD9491CAE744600D9FC6E /* TopicListModelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 629FD9481CAE744600D9FC6E /* TopicListModelCell.xib */; };
 		62ACC49E1CBB2ED90005199E /* ReadCommentModelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62ACC49D1CBB2ED90005199E /* ReadCommentModelCell.m */; };
@@ -289,6 +291,9 @@
 		6277721E1CB7E7220002CAF9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		627772201CB7E7390002CAF9 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		627772211CB7E7390002CAF9 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		628042C61CBE34B300E14896 /* RadioDetailListDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioDetailListDB.h; sourceTree = "<group>"; };
+		628042C71CBE34B300E14896 /* RadioDetailListDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioDetailListDB.m; sourceTree = "<group>"; };
+		628042C91CBE8BAC00E14896 /* fanhui.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fanhui.png; sourceTree = "<group>"; };
 		629FD9431CAE70F600D9FC6E /* TopicListModelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicListModelCell.h; sourceTree = "<group>"; };
 		629FD9441CAE70F600D9FC6E /* TopicListModelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicListModelCell.m; sourceTree = "<group>"; };
 		629FD9481CAE744600D9FC6E /* TopicListModelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicListModelCell.xib; sourceTree = "<group>"; };
@@ -604,6 +609,8 @@
 				62464A1E1CAD5360007BF8E1 /* RadioDetailShareInfoModel.m */,
 				62464A231CAD53CB007BF8E1 /* RadioDetailInfoModel.h */,
 				62464A241CAD53CB007BF8E1 /* RadioDetailInfoModel.m */,
+				628042C61CBE34B300E14896 /* RadioDetailListDB.h */,
+				628042C71CBE34B300E14896 /* RadioDetailListDB.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -838,6 +845,7 @@
 				62357BAA1CB938630029093E /* cpinglun.png */,
 				62357BAB1CB938630029093E /* fenxiang.png */,
 				62ACC4A41CBBE49A0005199E /* sendpinglun.png */,
+				628042C91CBE8BAC00E14896 /* fanhui.png */,
 			);
 			path = image;
 			sourceTree = "<group>";
@@ -1006,6 +1014,7 @@
 				62F08D8B1CB63BF8009B8EF3 /* comment.png in Resources */,
 				62F08D8E1CB63BF8009B8EF3 /* play.png in Resources */,
 				6277721B1CB7E20E0002CAF9 /* icon.png in Resources */,
+				628042CA1CBE8BAC00E14896 /* fanhui.png in Resources */,
 				620CD46E1CAA6C2D00D71743 /* TopicInfoViewController.xib in Resources */,
 				620CD4411CAA6B3300D71743 /* ReadViewController.xib in Resources */,
 				62F08DA91CB63CE8009B8EF3 /* player_pause_hl@2x.png in Resources */,
@@ -1173,6 +1182,7 @@
 				620457021CB3F562002EADA4 /* NSTimer+Manager.m in Sources */,
 				62464A061CACBBFD007BF8E1 /* FactoryCollectionViewCell.m in Sources */,
 				62621E6F1CAC0C8C0020BDF1 /* TopicCounterListModel.m in Sources */,
+				628042C81CBE34B300E14896 /* RadioDetailListDB.m in Sources */,
 				620CD43B1CAA6B2100D71743 /* ReadDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

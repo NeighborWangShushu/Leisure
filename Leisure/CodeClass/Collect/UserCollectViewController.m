@@ -43,6 +43,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    [self createBackButton];
+    
     [self createTableView];
     
     [self findDB];
@@ -50,10 +56,23 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)createBackButton {
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    backButton.frame = CGRectMake(0, 0, 25, 25);
+    [backButton setImage:[UIImage imageNamed:@"fanhui"] forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    self.navigationItem.leftBarButtonItem = backItem;
+}
+
+- (void)back {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark -----UITableView代理方法-----
 
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForFooterInSection:(NSInteger)section {
-    return 200;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 150;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

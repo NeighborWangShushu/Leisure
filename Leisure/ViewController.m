@@ -156,7 +156,29 @@
     
 }
 
+// 收藏按钮方法
 - (IBAction)collectButton:(id)sender {
+    if (![[UserInfoManager getUserAuth] isEqualToString:@""]) {
+        UserCollectViewController *collectVC = [[UserCollectViewController alloc] init];
+        UINavigationController *naVC = [[UINavigationController alloc] initWithRootViewController:collectVC];
+        [self presentViewController:naVC animated:YES completion:nil];
+    } else {
+        [self createAlertController];
+    }
+}
+
+// 创建AlertController
+- (void)createAlertController {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请先登录" message:@"您尚未登录" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *login = [UIAlertAction actionWithTitle:@"登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginAndRegister" bundle:nil];
+        LoginViewController *login = [storyboard instantiateInitialViewController];
+        [self presentViewController:login animated:YES completion:nil];
+    }];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:login];
+    [alert addAction:cancel];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 

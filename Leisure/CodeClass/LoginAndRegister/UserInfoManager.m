@@ -10,7 +10,7 @@
 
 #define kUserAuth @"UserAuth"
 #define kUserName @"UserName"
-#define kUserID @"UserID"
+#define kUserID   @"UserID"
 #define kUserIcon @"UserIcon"
 
 @implementation UserInfoManager
@@ -70,7 +70,7 @@
 
 // 保存用户的uid
 + (void)saveUserID:(NSString *)userid {
-    [[NSUserDefaults standardUserDefaults] setObject:userid forKey:kUserID];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%@", userid] forKey:kUserID];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
