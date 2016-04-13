@@ -7,9 +7,11 @@
 //
 
 #import "BaseViewController.h"
+#import "ReadDetailListModel.h"
 
 @interface ReadInfoViewController : BaseViewController
 
 @property (nonatomic, copy) NSString *contentid;
+@property (nonatomic, strong) ReadDetailListModel *detailModel;
 
 @end

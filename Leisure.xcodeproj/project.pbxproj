@@ -92,12 +92,19 @@
 		629FD9491CAE744600D9FC6E /* TopicListModelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 629FD9481CAE744600D9FC6E /* TopicListModelCell.xib */; };
 		62ACC49E1CBB2ED90005199E /* ReadCommentModelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62ACC49D1CBB2ED90005199E /* ReadCommentModelCell.m */; };
 		62ACC4A01CBB2F210005199E /* ReadCommentModelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62ACC49F1CBB2F210005199E /* ReadCommentModelCell.xib */; };
+		62ACC4A31CBBCCA10005199E /* KeyBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62ACC4A21CBBCCA10005199E /* KeyBoardView.m */; };
+		62ACC4A51CBBE49A0005199E /* sendpinglun.png in Resources */ = {isa = PBXBuildFile; fileRef = 62ACC4A41CBBE49A0005199E /* sendpinglun.png */; };
 		62D6F6F81CAAA7FB00DE6514 /* NetWorkRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D6F6F71CAAA7FB00DE6514 /* NetWorkRequestManager.m */; };
 		62D6F6FE1CAAB8E400DE6514 /* ReadListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D6F6FD1CAAB8E400DE6514 /* ReadListModel.m */; };
 		62D6F7011CAAB97600DE6514 /* ReadCarouseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D6F7001CAAB97600DE6514 /* ReadCarouseModel.m */; };
 		62D6F7041CAAB98B00DE6514 /* ReadDetailListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D6F7031CAAB98B00DE6514 /* ReadDetailListModel.m */; };
 		62E04A161CB12095002A1B9C /* NSString+Html.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E04A141CB12095002A1B9C /* NSString+Html.m */; };
 		62E04A171CB12095002A1B9C /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 62E04A151CB12095002A1B9C /* style.css */; };
+		62EBAAA51CBD32DC0033BCBC /* ReadDetailDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EBAAA41CBD32DC0033BCBC /* ReadDetailDB.m */; };
+		62EBAAA81CBD34800033BCBC /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EBAAA71CBD34800033BCBC /* DBManager.m */; };
+		62EBAAAA1CBD3CDE0033BCBC /* cshoucang.png in Resources */ = {isa = PBXBuildFile; fileRef = 62EBAAA91CBD3CDE0033BCBC /* cshoucang.png */; };
+		62EBAAAF1CBD3D550033BCBC /* UserCollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EBAAAD1CBD3D550033BCBC /* UserCollectViewController.m */; };
+		62EBAAB01CBD3D550033BCBC /* UserCollectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62EBAAAE1CBD3D550033BCBC /* UserCollectViewController.xib */; };
 		62F08D781CB611BB009B8EF3 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F08D771CB611BB009B8EF3 /* BaseView.m */; };
 		62F08D7B1CB611D4009B8EF3 /* PlayCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F08D7A1CB611D4009B8EF3 /* PlayCoverView.m */; };
 		62F08D7D1CB611EB009B8EF3 /* PlayCoverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62F08D7C1CB611EB009B8EF3 /* PlayCoverView.xib */; };
@@ -288,6 +295,9 @@
 		62ACC49C1CBB2ED90005199E /* ReadCommentModelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadCommentModelCell.h; sourceTree = "<group>"; };
 		62ACC49D1CBB2ED90005199E /* ReadCommentModelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadCommentModelCell.m; sourceTree = "<group>"; };
 		62ACC49F1CBB2F210005199E /* ReadCommentModelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadCommentModelCell.xib; sourceTree = "<group>"; };
+		62ACC4A11CBBCCA10005199E /* KeyBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyBoardView.h; sourceTree = "<group>"; };
+		62ACC4A21CBBCCA10005199E /* KeyBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyBoardView.m; sourceTree = "<group>"; };
+		62ACC4A41CBBE49A0005199E /* sendpinglun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sendpinglun.png; sourceTree = "<group>"; };
 		62D6F6F61CAAA7FB00DE6514 /* NetWorkRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkRequestManager.h; sourceTree = "<group>"; };
 		62D6F6F71CAAA7FB00DE6514 /* NetWorkRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkRequestManager.m; sourceTree = "<group>"; };
 		62D6F6F91CAAB31100DE6514 /* ConstantsDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstantsDefine.h; sourceTree = "<group>"; };
@@ -302,6 +312,14 @@
 		62E04A131CB12095002A1B9C /* NSString+Html.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Html.h"; sourceTree = "<group>"; };
 		62E04A141CB12095002A1B9C /* NSString+Html.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Html.m"; sourceTree = "<group>"; };
 		62E04A151CB12095002A1B9C /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		62EBAAA31CBD32DC0033BCBC /* ReadDetailDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadDetailDB.h; sourceTree = "<group>"; };
+		62EBAAA41CBD32DC0033BCBC /* ReadDetailDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadDetailDB.m; sourceTree = "<group>"; };
+		62EBAAA61CBD34800033BCBC /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		62EBAAA71CBD34800033BCBC /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		62EBAAA91CBD3CDE0033BCBC /* cshoucang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cshoucang.png; sourceTree = "<group>"; };
+		62EBAAAC1CBD3D550033BCBC /* UserCollectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCollectViewController.h; sourceTree = "<group>"; };
+		62EBAAAD1CBD3D550033BCBC /* UserCollectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCollectViewController.m; sourceTree = "<group>"; };
+		62EBAAAE1CBD3D550033BCBC /* UserCollectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCollectViewController.xib; sourceTree = "<group>"; };
 		62F08D761CB611BB009B8EF3 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
 		62F08D771CB611BB009B8EF3 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
 		62F08D791CB611D4009B8EF3 /* PlayCoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayCoverView.h; sourceTree = "<group>"; };
@@ -469,6 +487,7 @@
 		620CD4041CAA623B00D71743 /* CodeClass */ = {
 			isa = PBXGroup;
 			children = (
+				62EBAAAB1CBD3D350033BCBC /* Collect */,
 				6277721C1CB7E5C10002CAF9 /* LoginAndRegister */,
 				620CD4051CAA623B00D71743 /* Menu */,
 				620CD4091CAA623B00D71743 /* Product */,
@@ -640,6 +659,8 @@
 		620CD4121CAA623B00D71743 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				62EBAAA31CBD32DC0033BCBC /* ReadDetailDB.h */,
+				62EBAAA41CBD32DC0033BCBC /* ReadDetailDB.m */,
 				62D6F6FC1CAAB8E400DE6514 /* ReadListModel.h */,
 				62D6F6FD1CAAB8E400DE6514 /* ReadListModel.m */,
 				62D6F6FF1CAAB97600DE6514 /* ReadCarouseModel.h */,
@@ -689,6 +710,8 @@
 				62ACC49C1CBB2ED90005199E /* ReadCommentModelCell.h */,
 				62ACC49D1CBB2ED90005199E /* ReadCommentModelCell.m */,
 				62ACC49F1CBB2F210005199E /* ReadCommentModelCell.xib */,
+				62ACC4A11CBBCCA10005199E /* KeyBoardView.h */,
+				62ACC4A21CBBCCA10005199E /* KeyBoardView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -758,6 +781,8 @@
 				620457011CB3F562002EADA4 /* NSTimer+Manager.m */,
 				62F08DAE1CB63F73009B8EF3 /* PlayerManager.h */,
 				62F08DAF1CB63F73009B8EF3 /* PlayerManager.m */,
+				62EBAAA61CBD34800033BCBC /* DBManager.h */,
+				62EBAAA71CBD34800033BCBC /* DBManager.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -774,6 +799,16 @@
 				62357B9C1CB894890029093E /* UserInfoManager.m */,
 			);
 			path = LoginAndRegister;
+			sourceTree = "<group>";
+		};
+		62EBAAAB1CBD3D350033BCBC /* Collect */ = {
+			isa = PBXGroup;
+			children = (
+				62EBAAAC1CBD3D550033BCBC /* UserCollectViewController.h */,
+				62EBAAAD1CBD3D550033BCBC /* UserCollectViewController.m */,
+				62EBAAAE1CBD3D550033BCBC /* UserCollectViewController.xib */,
+			);
+			path = Collect;
 			sourceTree = "<group>";
 		};
 		62F08D831CB63BD5009B8EF3 /* Document */ = {
@@ -799,8 +834,10 @@
 				62F08D8A1CB63BF8009B8EF3 /* recommend.png */,
 				6277721A1CB7E20E0002CAF9 /* icon.png */,
 				62357BA91CB938630029093E /* shoucang.png */,
+				62EBAAA91CBD3CDE0033BCBC /* cshoucang.png */,
 				62357BAA1CB938630029093E /* cpinglun.png */,
 				62357BAB1CB938630029093E /* fenxiang.png */,
+				62ACC4A41CBBE49A0005199E /* sendpinglun.png */,
 			);
 			path = image;
 			sourceTree = "<group>";
@@ -952,15 +989,18 @@
 				620CD45A1CAA6BD500D71743 /* RadioViewController.xib in Resources */,
 				62464A371CAD6C00007BF8E1 /* RadioDetailListModelCell.xib in Resources */,
 				620CD3E01CAA5F4E00D71743 /* LaunchScreen.storyboard in Resources */,
+				62EBAAB01CBD3D550033BCBC /* UserCollectViewController.xib in Resources */,
 				62F08D8D1CB63BF8009B8EF3 /* nav_menu_icon@2x.png in Resources */,
 				62F08DAB1CB63CE8009B8EF3 /* player_play_hl@2x.png in Resources */,
 				62F08D8F1CB63BF8009B8EF3 /* play_background.png in Resources */,
 				62464A0B1CACC295007BF8E1 /* ReadListModelCell.xib in Resources */,
+				62ACC4A51CBBE49A0005199E /* sendpinglun.png in Resources */,
 				62357BAD1CB938630029093E /* cpinglun.png in Resources */,
 				620CD43C1CAA6B2100D71743 /* ReadDetailViewController.xib in Resources */,
 				620CD44B1CAA6B8000D71743 /* ProductViewController.xib in Resources */,
 				62464A351CAD6BE8007BF8E1 /* RadioListModelCell.xib in Resources */,
 				629FD9491CAE744600D9FC6E /* TopicListModelCell.xib in Resources */,
+				62EBAAAA1CBD3CDE0033BCBC /* cshoucang.png in Resources */,
 				62357BA21CB8A7380029093E /* nan.png in Resources */,
 				62464A101CACD162007BF8E1 /* ReadDetailListModelCell.xib in Resources */,
 				62F08D8B1CB63BF8009B8EF3 /* comment.png in Resources */,
@@ -1090,10 +1130,12 @@
 				62464A091CACC270007BF8E1 /* ReadListModelCell.m in Sources */,
 				62464A2B1CAD6090007BF8E1 /* ProductListModelCell.m in Sources */,
 				62621E6C1CABFA1B0020BDF1 /* ProductCommentListModel.m in Sources */,
+				62EBAAA51CBD32DC0033BCBC /* ReadDetailDB.m in Sources */,
 				62D6F6F81CAAA7FB00DE6514 /* NetWorkRequestManager.m in Sources */,
 				62F08D781CB611BB009B8EF3 /* BaseView.m in Sources */,
 				62F08D801CB63533009B8EF3 /* PlayRadioView.m in Sources */,
 				620CD4401CAA6B3300D71743 /* ReadViewController.m in Sources */,
+				62ACC4A31CBBCCA10005199E /* KeyBoardView.m in Sources */,
 				62621E751CAC151C0020BDF1 /* TopicCommentListModel.m in Sources */,
 				62621E631CABAC6F0020BDF1 /* ProductListModel.m in Sources */,
 				620CD4451CAA6B4C00D71743 /* ReadInfoViewController.m in Sources */,
@@ -1104,8 +1146,10 @@
 				620CD3D51CAA5F4E00D71743 /* AppDelegate.m in Sources */,
 				62D6F7011CAAB97600DE6514 /* ReadCarouseModel.m in Sources */,
 				62D6F6FE1CAAB8E400DE6514 /* ReadListModel.m in Sources */,
+				62EBAAAF1CBD3D550033BCBC /* UserCollectViewController.m in Sources */,
 				6277721F1CB7E7220002CAF9 /* LoginViewController.m in Sources */,
 				620CD4681CAA6C1E00D71743 /* TopicViewController.m in Sources */,
+				62EBAAA81CBD34800033BCBC /* DBManager.m in Sources */,
 				62F08DB01CB63F73009B8EF3 /* PlayerManager.m in Sources */,
 				62D6F7041CAAB98B00DE6514 /* ReadDetailListModel.m in Sources */,
 				62ACC49E1CBB2ED90005199E /* ReadCommentModelCell.m in Sources */,

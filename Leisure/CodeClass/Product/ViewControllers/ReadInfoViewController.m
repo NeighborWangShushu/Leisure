@@ -14,6 +14,8 @@
 #import "ReadInfoModel.h"
 #import "NSString+Html.h"
 
+#import "ReadDetailDB.h"
+
 @interface ReadInfoViewController ()
 
 @property (nonatomic, strong) NSMutableArray *infoArray;
@@ -90,23 +92,55 @@
     
 }
 
+// 收藏按钮方法
+- (void)collectItem:(id)sender {
+    UIButton *collectButton = (UIButton *)sender;
+    // 判断当前是否是用户登录状态,如果是就收藏,如果不是就弹出登录提醒框
+    if (![[UserInfoManager getUserAuth] isEqualToString:@""]) {
+        // 创建数据表
+        ReadDetailDB *db = [[ReadDetailDB alloc] init];
+        [db createDataTable];
+        // 查询数据是否存储,如果存储就取消存储
+        NSArray *array = [db findWithUserID:[UserInfoManager getUserID]];
+        for (ReadDetailListModel *model in array) {
+            if ([model.title isEqualToString:_detailModel.title]) {
+                [db deleteDetailWithTitle:_detailModel.title];
+                [collectButton setImage:[UIImage imageNamed:@"cshoucang"] forState:UIControlStateNormal];
+                return;
+            }
+        }
+        // 否则,调用保存方法进行存储
+        [db saveDetailModel:_detailModel];
+        [collectButton setImage:[UIImage imageNamed:@"shoucang"] forState:UIControlStateNormal];
+    } else {
+        [self createAlertController];
+    }
+}
+
+// 评论按钮方法
 - (void)commentItem {
+    // 判断当前是否是用户登录状态,如果是就进入评论,如果不是就弹出登录提醒框
     if (![[UserInfoManager getUserAuth] isEqualToString:@""]) {
         CommentViewController *comment = [[CommentViewController alloc] init];
         comment.contentid = self.contentid;
         [self.navigationController pushViewController:comment animated:YES];
     } else {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请先登录" message:@"您尚未登录" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *login = [UIAlertAction actionWithTitle:@"登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginAndRegister" bundle:nil];
-            LoginViewController *login = [storyboard instantiateInitialViewController];
-            [self presentViewController:login animated:YES completion:nil];
-        }];
-        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
-        [alert addAction:login];
-        [alert addAction:cancel];
-        [self presentViewController:alert animated:YES completion:nil];
+        [self createAlertController];
     }
+}
+
+// 创建AlertController
+- (void)createAlertController {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请先登录" message:@"您尚未登录" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *login = [UIAlertAction actionWithTitle:@"登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginAndRegister" bundle:nil];
+        LoginViewController *login = [storyboard instantiateInitialViewController];
+        [self presentViewController:login animated:YES completion:nil];
+    }];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:login];
+    [alert addAction:cancel];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 // 创建UIBarButtonItems方法

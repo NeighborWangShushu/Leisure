@@ -13,6 +13,7 @@
 #import "RadioViewController.h"
 #import "TopicViewController.h"
 #import "LoginViewController.h"
+#import "UserCollectViewController.h"
 
 #import "UserInfoManager.h"
 
@@ -155,6 +156,8 @@
     
 }
 
+- (IBAction)collectButton:(id)sender {
+}
 
 
 #pragma mark -----UITableView代理方法-----

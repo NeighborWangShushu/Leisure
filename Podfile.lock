@@ -1,4 +1,7 @@
 PODS:
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
   - MJRefresh (3.1.0)
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
@@ -6,11 +9,13 @@ PODS:
   - UITableView+FDTemplateLayoutCell_Bell (1.4.1)
 
 DEPENDENCIES:
+  - FMDB (~> 2.6.2)
   - MJRefresh (~> 3.1.0)
   - SDWebImage (~> 3.7.5)
   - UITableView+FDTemplateLayoutCell_Bell (~> 1.4.1)
 
 SPEC CHECKSUMS:
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   UITableView+FDTemplateLayoutCell_Bell: 99fa3b3c1e200c8fceae1af39ba3787707d200cc

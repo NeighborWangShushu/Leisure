@@ -12,7 +12,9 @@
 
 #import "FactoryTableViewCell.h"
 
-@interface CommentViewController () <UITableViewDataSource, UITableViewDelegate>
+#import "KeyBoardView.h"
+
+@interface CommentViewController () <UITableViewDataSource, UITableViewDelegate, KeyBoardViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -20,6 +22,11 @@
 @property (nonatomic, assign) NSInteger limit;
 
 @property (nonatomic, strong) NSMutableArray *commentArray;
+
+@property (nonatomic, strong) KeyBoardView *keyView;
+@property (nonatomic, assign) CGFloat keyBoardHeight;
+@property (nonatomic, assign) CGRect originalKey;
+@property (nonatomic, assign) CGRect originalText;
 
 @end
 
@@ -46,6 +53,7 @@
     [self.view addSubview:_tableView];
 }
 
+// 获取评论
 - (void)requestData {
     [NetWorkRequestManager requestWithType:POST urlString:GETCOMMENT_URL parDic:@{@"auth" : [UserInfoManager getUserAuth], @"contentid" : _contentid, @"start" : @(_start), @"limit" : @(_limit)} finish:^(NSData *data) {
         
@@ -75,6 +83,30 @@
     }];
 }
 
+// 发表评论
+- (void)requestSendComment:(NSString *)comment {
+    [NetWorkRequestManager requestWithType:POST urlString:ADDCOMMENT_URL parDic:@{@"auth" : [UserInfoManager getUserAuth], @"contentid" : _contentid, @"content" : comment} finish:^(NSData *data) {
+        
+        NSDictionary *dataDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+        
+        NSLog(@"%@",dataDic);
+        
+        NSLog(@"msg = %@", dataDic[@"data"][@"msg"]);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // 发送成功
+            if ([dataDic[@"result"] intValue] == 1) {
+                [self requestData];
+            }
+        });
+        
+    } error:^(NSError *error) {
+        NSLog(@"error is %@", error);
+    }];
+}
+
+
+
 #pragma mark -----UITableView代理方法-----
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -91,6 +123,50 @@
     
 }
 
+// 创建发表评论按钮
+- (void)createAddCommentButton {
+    UIButton *addComment = [UIButton buttonWithType:UIButtonTypeCustom];
+    addComment.frame = CGRectMake(0, 0, 25, 25);
+    [addComment setImage:[UIImage imageNamed:@"sendpinglun"] forState:UIControlStateNormal];
+    [addComment addTarget:self action:@selector(addBtn) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *addCommentItem = [[UIBarButtonItem alloc] initWithCustomView:addComment];
+    self.navigationItem.rightBarButtonItem = addCommentItem;
+}
+
+- (void)addBtn {
+    if (self.keyView == nil) {
+        self.keyView = [[KeyBoardView alloc] initWithFrame:CGRectMake(0, ScreenHeight - 44, ScreenWidth, 44)];
+    }
+    self.keyView.delegate = self;
+    [self.keyView.textView becomeFirstResponder];
+    self.keyView.textView.returnKeyType = UIReturnKeySend;
+    [self.view addSubview:self.keyView];
+}
+
+- (void)keyboardShow:(NSNotification *)note {
+    CGRect keyBoardRect = [note.userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+    CGFloat deltaY = keyBoardRect.size.height;
+    self.keyBoardHeight = deltaY;
+    [UIView animateWithDuration:[note.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue] animations:^{
+        self.keyView.transform = CGAffineTransformMakeTranslation(0, - deltaY);
+    }];
+}
+
+- (void)keyBoardHide:(NSNotification *)note {
+    [UIView animateWithDuration:[note.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue] animations:^{
+        self.keyView.transform = CGAffineTransformIdentity;
+    } completion:^(BOOL finished) {
+        self.keyView.textView.text = @"";
+        [self.keyView removeFromSuperview];
+    }];
+}
+
+#pragma mark -----KeyBoardView代理方法-----
+
+- (void)keyBoardViewHide:(KeyBoardView *)keyBoardView textView:(UITextView *)contentView {
+    [contentView resignFirstResponder];
+    [self requestSendComment:contentView.text];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -98,6 +174,11 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     [self requestData];
+    
+    [self createAddCommentButton];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardHide:) name:UIKeyboardWillHideNotification object:nil];
     
     // Do any additional setup after loading the view from its nib.
 }

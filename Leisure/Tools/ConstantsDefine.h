@@ -13,5 +13,7 @@
 #define ScreenHeight    [[UIScreen mainScreen] bounds].size.height // 屏幕高
 #define NavigationBarHeight 44.0 // 导航栏高度
 
+#define SQLITENAME      @"leisure.sqlite" // 数据库名
+#define READDETAILTABLE @"ReadDetail" // 阅读详情数据表
 
 #endif /* ConstantsDefine_h */

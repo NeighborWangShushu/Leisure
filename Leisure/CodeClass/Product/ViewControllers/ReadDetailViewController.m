@@ -286,6 +286,7 @@
     ReadDetailListModel *model = nil;
     model = (_requestSort == 0) ? self.addTimeArray[indexPath.row] : self.hotArray[indexPath.row];
     infoVC.contentid = model.contentID;
+    infoVC.detailModel = model;
     [self.navigationController pushViewController:infoVC animated:YES];
 
 }
