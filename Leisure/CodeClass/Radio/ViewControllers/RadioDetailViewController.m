@@ -130,7 +130,6 @@
             
         }
         
-        
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [_tableView reloadData];
@@ -142,7 +141,6 @@
             }
             
         });
-        
         
     } error:^(NSError *error) {
         NSLog(@"error = %@", error);
@@ -251,6 +249,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     _start = 0;
     _limit = 10;

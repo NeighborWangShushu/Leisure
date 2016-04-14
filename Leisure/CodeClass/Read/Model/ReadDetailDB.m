@@ -30,7 +30,7 @@
         // 创建新的数据表
         NSString *sql = [NSString stringWithFormat:@"CREATE TABLE %@ (readID INTEGER PRIMARY KEY AUTOINCREMENT  NOT NULL, userID text, title text, contentID text, content text, name text, coverimg text)", READDETAILTABLE];
         BOOL res = [_dataBase executeUpdate:sql];
-        if (!res) {
+        if (res) {
             NSLog(@"数据表创建成功");
         } else {
             NSLog(@"数据表创建失败");

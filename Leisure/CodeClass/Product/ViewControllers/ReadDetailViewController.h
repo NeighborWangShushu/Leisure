@@ -11,5 +11,6 @@
 @interface ReadDetailViewController : BaseViewController
 
 @property (nonatomic, copy) NSString *typeId;
+@property (nonatomic, copy) NSString *name;
 
 @end

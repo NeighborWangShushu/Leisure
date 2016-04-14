@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "DownLoadManager.h"
 
 @interface AppDelegate ()
 
@@ -20,6 +21,13 @@
     return YES;
 }
 
+// 后台下载任务完成后,程序被唤醒,该方法将被调用
+- (void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)())completionHandler {
+    NSLog(@"后台任务完成 identifier = %@", identifier);
+    
+    self.backgroundHandel = completionHandler;
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -28,6 +36,12 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    // 如果用户没有操作暂停按钮完成断电数据的保存,这时就需要对断电数据进行自动保存
+    NSArray *array = [[DownLoadManager defaultManager] findAllDownloads];
+    for (DownLoad *download in array) {
+        [download pause];
+    }
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

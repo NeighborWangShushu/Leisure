@@ -30,6 +30,9 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ak-sY-jf8">
                     <rect key="frame" x="57" y="486" width="30" height="30"/>
                     <state key="normal" backgroundImage="player_download.png"/>
+                    <connections>
+                        <action selector="radioDownload:" destination="uBH-YG-gq5" eventType="touchUpInside" id="DNd-Nj-6of"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3q-9S-g8p">
                     <rect key="frame" x="317" y="493" width="39" height="17"/>
@@ -43,34 +46,39 @@
                         <constraint firstAttribute="width" constant="200" id="Nch-m2-meM"/>
                     </constraints>
                 </slider>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mi0-gp-VR8">
+                    <rect key="frame" x="42" y="491" width="60" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="1PR-HE-gBE"/>
+                        <constraint firstAttribute="height" constant="20" id="5aM-HU-LtJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Xu4-Xk-LWQ" secondAttribute="trailing" constant="45" id="8G3-8g-orf"/>
                 <constraint firstItem="4tO-OM-6RT" firstAttribute="top" secondItem="EwS-bG-Z8F" secondAttribute="bottom" constant="35" id="8rr-9c-BQl"/>
                 <constraint firstItem="EwS-bG-Z8F" firstAttribute="top" secondItem="Xu4-Xk-LWQ" secondAttribute="bottom" constant="62" id="ISU-xs-1OV"/>
-                <constraint firstAttribute="trailing" secondItem="n3q-9S-g8p" secondAttribute="trailing" constant="50" id="OTM-PG-6EU"/>
                 <constraint firstItem="Xu4-Xk-LWQ" firstAttribute="leading" secondItem="uBH-YG-gq5" secondAttribute="leading" constant="45" id="Tv1-Kr-Oyk"/>
                 <constraint firstItem="n3q-9S-g8p" firstAttribute="centerY" secondItem="4tO-OM-6RT" secondAttribute="centerY" id="ZZj-48-T2o"/>
                 <constraint firstItem="Xu4-Xk-LWQ" firstAttribute="top" secondItem="uBH-YG-gq5" secondAttribute="top" constant="45" id="b18-pT-qEJ"/>
+                <constraint firstItem="mi0-gp-VR8" firstAttribute="centerX" secondItem="4Ak-sY-jf8" secondAttribute="centerX" id="gEW-wv-PKK"/>
                 <constraint firstItem="4Ak-sY-jf8" firstAttribute="centerY" secondItem="4tO-OM-6RT" secondAttribute="centerY" id="gb8-nM-YTX"/>
+                <constraint firstItem="mi0-gp-VR8" firstAttribute="centerY" secondItem="4Ak-sY-jf8" secondAttribute="centerY" id="gqa-Ks-7J2"/>
                 <constraint firstItem="4tO-OM-6RT" firstAttribute="leading" secondItem="4Ak-sY-jf8" secondAttribute="trailing" constant="20" id="jIN-DK-6DU"/>
-                <constraint firstItem="4Ak-sY-jf8" firstAttribute="leading" secondItem="uBH-YG-gq5" secondAttribute="leading" constant="50" id="pIy-TW-ghi"/>
                 <constraint firstItem="EwS-bG-Z8F" firstAttribute="centerX" secondItem="uBH-YG-gq5" secondAttribute="centerX" id="s0m-WE-StR"/>
                 <constraint firstItem="4tO-OM-6RT" firstAttribute="centerX" secondItem="uBH-YG-gq5" secondAttribute="centerX" id="smJ-2O-hob"/>
                 <constraint firstItem="n3q-9S-g8p" firstAttribute="leading" secondItem="4tO-OM-6RT" secondAttribute="trailing" constant="10" id="zhE-R0-BgV"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="pIy-TW-ghi"/>
-                    <exclude reference="OTM-PG-6EU"/>
-                </mask>
-            </variation>
             <connections>
                 <outlet property="coverImageView" destination="Xu4-Xk-LWQ" id="e15-Se-1Fj"/>
                 <outlet property="downButton" destination="4Ak-sY-jf8" id="Vuy-Zn-E6A"/>
                 <outlet property="playSlider" destination="4tO-OM-6RT" id="tp8-6U-8TI"/>
+                <outlet property="progressLabel" destination="mi0-gp-VR8" id="LyG-lZ-hJ9"/>
                 <outlet property="timeLabel" destination="n3q-9S-g8p" id="zO8-jM-c9I"/>
                 <outlet property="titleLabel" destination="EwS-bG-Z8F" id="0MV-P4-y4F"/>
             </connections>

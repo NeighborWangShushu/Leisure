@@ -12,6 +12,7 @@
 @interface RadioDetailListModel : BaseModel
 
 @property (nonatomic, copy) NSString *coverimg;
+@property (nonatomic, strong) NSNumber *isnew;
 @property (nonatomic, copy) NSString *musicUrl;
 @property (nonatomic, copy) NSString *musicVisit;
 @property (nonatomic, copy) NSString *tingid;

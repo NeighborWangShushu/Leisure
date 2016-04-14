@@ -172,6 +172,7 @@
     [super viewDidLoad];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
+    self.title = @"评论";
     
     [self requestData];
     

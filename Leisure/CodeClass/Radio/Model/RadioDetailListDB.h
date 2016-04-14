@@ -17,7 +17,8 @@
 // 创建数据表
 - (void)createDataTable;
 
-// 保存数据模型
-- (void)saveDataWithModel:(RadioDetailListModel *)model path:(NSString *)path;
+// 保存一条数据
+// 将model数据和本地音频路径保存到数据表中
+- (void)saveDataWithModel:(RadioDetailListModel *)model savepath:(NSString *)savepath;
 
 @end

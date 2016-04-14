@@ -161,7 +161,7 @@
     [self createWebView];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
+    self.title = _detailModel.title;
     
     UIBarButtonItem *comment = [self createBarButtonItemWithImageName:@"cpinglun" action:@selector(commentItem)];
     

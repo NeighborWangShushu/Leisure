@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (nonatomic, copy) void (^backgroundHandel)(); // 将系统后台完成方法中的Block参数传到具体的下载对象中去执行
 
 @end
 

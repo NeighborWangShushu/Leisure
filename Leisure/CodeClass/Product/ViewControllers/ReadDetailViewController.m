@@ -223,6 +223,7 @@
 //    [self requestDataWithSort:@"hot"];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
+    self.title = _name;
     
     UIBarButtonItem *addTimeItem = [[UIBarButtonItem alloc] initWithTitle:@"New" style:UIBarButtonItemStylePlain target:self action:@selector(addTime)];
     UIBarButtonItem *hotItem = [[UIBarButtonItem alloc] initWithTitle:@"Hot" style:UIBarButtonItemStylePlain target:self action:@selector(hot)];

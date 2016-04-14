@@ -162,6 +162,7 @@
     ReadDetailViewController *detailVC = [[ReadDetailViewController alloc] init];
     ReadListModel *model = _listArray[indexPath.row];
     detailVC.typeId = model.type;
+    detailVC.name = model.name;
     
     [self.navigationController pushViewController:detailVC animated:YES];
     
@@ -171,7 +172,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor yellowColor];
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"阅读";
     
     [self createListView];
     [self requestData];
